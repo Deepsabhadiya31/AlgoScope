@@ -26,7 +26,10 @@ export const mooreVotingSources = {
 }
 
 const arr = [2,2,1,1,1,2,2];
-console.log(mooreVoting(arr));`,
+console.log(mooreVoting(arr));
+
+const boundaryArr = [];
+console.log(mooreVoting(boundaryArr));`,
     },
 
     python: {
