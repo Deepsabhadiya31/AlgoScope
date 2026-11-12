@@ -1,0 +1,32 @@
+{
+  "taskId": "R62-T042",
+  "githubIssue": 42,
+  "targetFile": "src/algorithms/mooreVoting/mooreVotingSources.js",
+  "targetAlgorithm": "mooreVoting",
+  "targetLanguage": "javascript",
+  "fixtures": [
+    {
+      "name": "displayedExample",
+      "expression": "mooreVoting(arr)",
+      "input": [2, 2, 1, 1, 1, 2, 2],
+      "expected": 2,
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "name": "boundaryExample",
+      "expression": "mooreVoting(boundaryArr)",
+      "input": [],
+      "expected": -1,
+      "actual": -1,
+      "pass": true
+    }
+  ],
+  "nodeVmExecution": {
+    "module": "node:vm",
+    "timeoutMs": 2000,
+    "capturedLogs": [2, -1],
+    "pass": true
+  }
+}
+
