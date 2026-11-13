@@ -1,0 +1,66 @@
+
+> algoscope@1.13.0 build
+> vite build
+
+vite v7.1.11 building for production...
+transforming...
+✓ 4434 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                    5.42 kB │ gzip:   1.57 kB
+dist/assets/click-Cs55_HVK.wav                    58.02 kB
+dist/assets/logo2-C7ohc_eq.png                   123.48 kB
+dist/assets/index-Dv2THLdc.css                   189.28 kB │ gzip:  25.85 kB
+dist/assets/DiskSchedulingPage-B6IFdugG.js         0.22 kB │ gzip:   0.19 kB
+dist/assets/PageReplacementPage-DKQrXj-7.js        0.22 kB │ gzip:   0.19 kB
+dist/assets/arrow-right-Bn5wi3Hn.js                0.34 kB │ gzip:   0.26 kB
+dist/assets/clsx-B-dksMZM.js                       0.37 kB │ gzip:   0.24 kB
+dist/assets/DifficultyBadge-K1O3T97y.js            0.51 kB │ gzip:   0.37 kB
+dist/assets/utils-CKM-dwL_.js                      0.60 kB │ gzip:   0.37 kB
+dist/assets/useKeyboardShortcuts-DVs6Ni7-.js       0.68 kB │ gzip:   0.42 kB
+dist/assets/StatusDisplay-0piB3ujb.js              0.97 kB │ gzip:   0.58 kB
+dist/assets/Favorites-CMa2ZJ4r.js                  1.23 kB │ gzip:   0.62 kB
+dist/assets/useStepPlayback-DTZfGzbE.js            1.23 kB │ gzip:   0.57 kB
+dist/assets/difficultyColors-C7fAmY8y.js           1.32 kB │ gzip:   0.48 kB
+dist/assets/ComplexityGraph-CRozmOyI.js            1.33 kB │ gzip:   0.77 kB
+dist/assets/LearningPathSuggestions--jeUdSu8.js    1.60 kB │ gzip:   0.82 kB
+dist/assets/OperatingSystemsPage-D83b31mn.js       2.94 kB │ gzip:   1.20 kB
+dist/assets/visualizerData-6wkY7lJs.js             5.30 kB │ gzip:   1.83 kB
+dist/assets/ConceptsOverview-BK-fvHY3.js           5.39 kB │ gzip:   2.03 kB
+dist/assets/AlgoCard-BQHte13Q.js                   5.68 kB │ gzip:   2.25 kB
+dist/assets/PageNotFound-CEHMpGGw.js               7.24 kB │ gzip:   2.40 kB
+dist/assets/VisualizerPage-DiVvz5B_.js             8.95 kB │ gzip:   2.99 kB
+dist/assets/TestCaseManager-DrdjR58f.js            9.70 kB │ gzip:   3.29 kB
+dist/assets/scheduleNetworkReady-CHqweZCA.js      10.43 kB │ gzip:   3.59 kB
+dist/assets/VisualizerPage-Bp1jGrdL.js            10.91 kB │ gzip:   3.29 kB
+dist/assets/About-DoLT69Us.js                     12.77 kB │ gzip:   4.02 kB
+dist/assets/DPVisualizer-C880_lnJ.js              23.03 kB │ gzip:   6.58 kB
+dist/assets/SlidingWindowVisualizer-DC8az4Fa.js   26.29 kB │ gzip:   8.20 kB
+dist/assets/TwoPointerVisualizer-Dc4HRoOm.js      27.14 kB │ gzip:   7.67 kB
+dist/assets/StackVisualizerPage-jPdiehTG.js       29.37 kB │ gzip:   7.81 kB
+dist/assets/VisualizerPage-B6WIWWiC.js            31.12 kB │ gzip:   9.52 kB
+dist/assets/DPOptimizationJourney-DcGZqcZD.js     31.52 kB │ gzip:   9.08 kB
+dist/assets/CPUSchedulingPage-Drm5Rl19.js         33.05 kB │ gzip:   8.02 kB
+dist/assets/VisualizerPage-DysQIq9D.js            34.64 kB │ gzip:   8.99 kB
+dist/assets/Home-DVp-ODzy.js                      35.40 kB │ gzip:  10.72 kB
+dist/assets/VisualizerPage-kxg29YhW.js            38.56 kB │ gzip:   9.91 kB
+dist/assets/ChallengePage-BZ3mRs9d.js             57.18 kB │ gzip:  15.76 kB
+dist/assets/VisualizerPage-BBvUlPdo.js            60.32 kB │ gzip:  15.08 kB
+dist/assets/PracticePage-Df1nMsfV.js              60.71 kB │ gzip:  16.52 kB
+dist/assets/VisualizerPage-Dxfc4B8A.js            62.74 kB │ gzip:  15.74 kB
+dist/assets/MathSoloVisualizer-CaUVuAzI.js        64.91 kB │ gzip:  16.42 kB
+dist/assets/VisualizerPage-BY4NPxys.js            87.55 kB │ gzip:  19.37 kB
+dist/assets/ComplexityCard-BStO81Sr.js           100.79 kB │ gzip:  34.97 kB
+dist/assets/ShortestPathPage-Cb1aYi5x.js         101.39 kB │ gzip:  26.42 kB
+dist/assets/CodePanel-59kw7aNp.js                150.12 kB │ gzip:  19.90 kB
+dist/assets/DSLayout-9ji6_C1B.js                 200.93 kB │ gzip:  50.78 kB
+dist/assets/LineChart-BG9wlEfe.js                356.30 kB │ gzip: 106.46 kB
+dist/assets/index-DShys93t.js                    587.30 kB │ gzip: 179.96 kB
+dist/assets/vsc-dark-plus-B-iRgz29.js            639.28 kB │ gzip: 230.95 kB
+dist/assets/vis-network-CZusj8r5.js              659.02 kB │ gzip: 156.60 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 2.60s
