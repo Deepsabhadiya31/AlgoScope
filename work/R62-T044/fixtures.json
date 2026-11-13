@@ -1,0 +1,75 @@
+{
+  "taskId": "R62-T044",
+  "githubIssue": 44,
+  "targetFile": "src/algorithms/course/queue-using-two-stacks.js",
+  "testFile": "src/algorithms/course/r62-t044.test.js",
+  "primaryFixture": {
+    "operations": [
+      { "action": "enqueue", "value": "A", "expectedSize": 1 },
+      { "action": "enqueue", "value": "B", "expectedSize": 2 },
+      { "action": "dequeue", "expectedValue": "A", "expectedSize": 1 },
+      { "action": "enqueue", "value": "C", "expectedSize": 2 },
+      { "action": "dequeue", "expectedValue": "B", "expectedSize": 1 },
+      { "action": "dequeue", "expectedValue": "C", "expectedSize": 0 },
+      { "action": "dequeue", "expectedValue": null, "expectedSize": 0 }
+    ],
+    "fifoOrderSatisfied": true,
+    "finalState": {
+      "inStack": [],
+      "outStack": [],
+      "logicalQueue": [],
+      "size": 0,
+      "isEmpty": true
+    }
+  },
+  "invariantsVerified": [
+    {
+      "name": "Invariant 1: Logical Queue Representation",
+      "formula": "logicalQueue = [...outStack].reverse().concat(inStack)",
+      "verifiedAtEveryStep": true
+    },
+    {
+      "name": "Invariant 2: Size Conservation",
+      "formula": "size = inStack.length + outStack.length === logicalQueue.length",
+      "verifiedAtEveryStep": true
+    },
+    {
+      "name": "Invariant 3: Front Element Consistency",
+      "formula": "front === (outStack.length > 0 ? outStack[outStack.length - 1] : inStack[0])",
+      "verifiedAtEveryStep": true
+    },
+    {
+      "name": "Invariant 4: FIFO Temporal Order",
+      "description": "Elements exit in the exact sequence they were inserted",
+      "verifiedAtEveryStep": true
+    },
+    {
+      "name": "Invariant 5: Snapshot Immutability",
+      "description": "Historical step snapshots are deeply cloned and frozen; past snapshots are never mutated by subsequent operations",
+      "verifiedAtEveryStep": true
+    }
+  ],
+  "automatedChecks": {
+    "vitest": {
+      "command": "npm test -- src/algorithms/course/r62-t044.test.js",
+      "tests": 25,
+      "passed": 25,
+      "failed": 0
+    },
+    "build": {
+      "command": "npm run build",
+      "status": "PASS"
+    },
+    "lint": {
+      "command": "npm run lint",
+      "warnings": 0,
+      "errors": 0,
+      "status": "PASS"
+    },
+    "standaloneScript": {
+      "command": "node work/R62-T044/verify.js",
+      "status": "PASS",
+      "exitCode": 0
+    }
+  }
+}
