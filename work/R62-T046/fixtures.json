@@ -1,0 +1,62 @@
+{
+  "taskId": "R62-T046",
+  "githubIssue": 46,
+  "targetFile": "src/algorithms/course/topological-sort-kahn.js",
+  "testFile": "src/algorithms/course/r62-t046.test.js",
+  "primaryRequirements": {
+    "basicDirectedGraph": {
+      "edges": [["A", "C"], ["B", "C"]],
+      "expectedOrderValid": true,
+      "computedOrder": ["A", "B", "C"],
+      "precedenceChecks": {
+        "A_before_C": true,
+        "B_before_C": true
+      },
+      "status": "PASS"
+    },
+    "cycleDetection": {
+      "edges": [["A", "B"], ["B", "C"], ["C", "A"]],
+      "expectedSuccess": false,
+      "expectedHasCycle": true,
+      "expectedOrder": null,
+      "unprocessedVertices": ["A", "B", "C"],
+      "status": "PASS"
+    },
+    "mixedCyclicGraph": {
+      "edges": [["Start", "A"], ["A", "B"], ["B", "A"]],
+      "expectedSuccess": false,
+      "expectedHasCycle": true,
+      "expectedOrder": null,
+      "unprocessedVertices": ["A", "B"],
+      "status": "PASS"
+    }
+  },
+  "deterministicReplay": {
+    "identicalTracesOnRepeatedRuns": true,
+    "traceReplayValidation": "PASS",
+    "frozenSnapshotImmutability": "PASS"
+  },
+  "automatedChecks": {
+    "vitest": {
+      "command": "npm test -- src/algorithms/course/r62-t046.test.js",
+      "tests": 24,
+      "passed": 24,
+      "failed": 0
+    },
+    "build": {
+      "command": "npm run build",
+      "status": "PASS"
+    },
+    "lint": {
+      "command": "npm run lint",
+      "warnings": 0,
+      "errors": 0,
+      "status": "PASS"
+    },
+    "standaloneScript": {
+      "command": "node work/R62-T046/verify.js",
+      "status": "PASS",
+      "exitCode": 0
+    }
+  }
+}

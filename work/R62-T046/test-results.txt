@@ -1,0 +1,14 @@
+
+> algoscope@1.13.0 test
+> vitest run src/algorithms/course/r62-t046.test.js
+
+
+ RUN  v4.1.7 /Users/deepsabhadiya/AlgoScope
+
+ ✓ src/algorithms/course/r62-t046.test.js (24 tests) 3ms
+
+ Test Files  1 passed (1)
+      Tests  24 passed (24)
+   Start at  19:21:10
+   Duration  76ms (transform 12ms, setup 0ms, import 17ms, tests 3ms, environment 0ms)
+
