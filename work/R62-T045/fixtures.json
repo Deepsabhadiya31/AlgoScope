@@ -1,0 +1,79 @@
+{
+  "taskId": "R62-T045",
+  "githubIssue": 45,
+  "targetFile": "src/algorithms/course/fast-exponentiation.js",
+  "testFile": "src/algorithms/course/r62-t045.test.js",
+  "primaryRequirements": {
+    "fixture_2_pow_10": {
+      "base": 2,
+      "exp": 10,
+      "expectedResult": 1024,
+      "actualResult": 1024,
+      "status": "PASS"
+    },
+    "exponent_0_gives_1": {
+      "cases": [
+        { "base": 2, "exp": 0, "expected": 1, "actual": 1 },
+        { "base": 10, "exp": 0, "expected": 1, "actual": 1 },
+        { "base": 0, "exp": 0, "expected": 1, "actual": 1 },
+        { "base": -5, "exp": 0, "expected": 1, "actual": 1 }
+      ],
+      "status": "PASS"
+    },
+    "exponent_1_gives_base": {
+      "cases": [
+        { "base": 2, "exp": 1, "expected": 2, "actual": 2 },
+        { "base": 99, "exp": 1, "expected": 99, "actual": 99 },
+        { "base": -7, "exp": 1, "expected": -7, "actual": -7 }
+      ],
+      "status": "PASS"
+    },
+    "step_count_grows_with_bit_length": {
+      "exp_10": {
+        "bitLength": 4,
+        "fastExpoOperations": 5,
+        "naiveMultiplications": 10
+      },
+      "exp_32": {
+        "bitLength": 6,
+        "fastExpoOperations": 6,
+        "naiveMultiplications": 32
+      },
+      "exp_1024": {
+        "bitLength": 11,
+        "fastExpoOperations": 11,
+        "naiveMultiplications": 1024
+      },
+      "status": "PASS"
+    }
+  },
+  "deterministicReplay": {
+    "identicalTracesOnRepeatedRuns": true,
+    "traceReplayValidation": "PASS",
+    "frozenSnapshotImmutability": "PASS",
+    "timingIndependence": "PASS"
+  },
+  "automatedChecks": {
+    "vitest": {
+      "command": "npm test -- src/algorithms/course/r62-t045.test.js",
+      "tests": 27,
+      "passed": 27,
+      "failed": 0
+    },
+    "build": {
+      "command": "npm run build",
+      "status": "PASS"
+    },
+    "lint": {
+      "command": "npm run lint",
+      "warnings": 0,
+      "errors": 0,
+      "status": "PASS"
+    },
+    "standaloneScript": {
+      "command": "node work/R62-T045/verify.js",
+      "status": "PASS",
+      "exitCode": 0
+    }
+  }
+}
