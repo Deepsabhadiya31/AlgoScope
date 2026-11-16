@@ -1,0 +1,6 @@
+Node: v24.19.0
+npm: 11.17.0
+Git: git version 2.55.0
+Vite: vite/7.1.11 darwin-arm64 node-v24.19.0
+Vitest: vitest/4.1.7 darwin-arm64 node-v24.19.0
+ESLint: v9.38.0

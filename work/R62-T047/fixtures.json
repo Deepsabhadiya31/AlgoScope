@@ -1,0 +1,78 @@
+{
+  "taskId": "R62-T047",
+  "taskTitle": "Selection Sort Steps – Executable Documentation",
+  "primaryFile": "src/algorithms/sorting/selectionSortSteps.js",
+  "testFile": "src/algorithms/course/r62-t047.test.js",
+  "verificationScript": "work/R62-T047/verify.js",
+  "fixtures": [
+    {
+      "name": "General unsorted array with inversions",
+      "input": [3, 1, 2],
+      "expected": [1, 2, 3],
+      "swaps": 2,
+      "stepsGenerated": 7,
+      "description": "Standard case requiring outer loop iterations and min index updates."
+    },
+    {
+      "name": "Duplicates array",
+      "input": [2, 2, 1],
+      "expected": [1, 2, 2],
+      "swaps": 1,
+      "stepsGenerated": 7,
+      "description": "Array containing duplicate values; verifies stable or standard selection sort behavior."
+    },
+    {
+      "name": "Already-sorted array",
+      "input": [1, 2, 3],
+      "expected": [1, 2, 3],
+      "swaps": 0,
+      "stepsGenerated": 7,
+      "description": "Already sorted collection; verifies 0 swaps performed since minIndex === i."
+    },
+    {
+      "name": "Reverse-sorted array",
+      "input": [3, 2, 1],
+      "expected": [1, 2, 3],
+      "swaps": 1,
+      "stepsGenerated": 7,
+      "description": "Strictly descending array; verifies multi-step min tracking and swapping."
+    },
+    {
+      "name": "Empty collection",
+      "input": [],
+      "expected": [],
+      "swaps": 0,
+      "stepsGenerated": 1,
+      "description": "Smallest edge collection (empty array); returns immediately with complete step."
+    },
+    {
+      "name": "Single-element collection",
+      "input": [42],
+      "expected": [42],
+      "swaps": 0,
+      "stepsGenerated": 1,
+      "description": "Single element array; returns sorted with 0 swaps."
+    }
+  ],
+  "executableDocumentation": {
+    "sourceLanguage": "javascript",
+    "fixtureExecutedInVM": "const arr = [3, 1, 2]; selectionSort(arr); console.log(arr);",
+    "vmExecutionOutput": [1, 2, 3],
+    "lineMappingVerified": {
+      "initial": 1,
+      "outer_loop": 2,
+      "set_min": 3,
+      "inner_loop": 4,
+      "compare": 5,
+      "update_min": 6,
+      "swap": 11,
+      "complete": 14
+    }
+  },
+  "checks": {
+    "vitest": "16 passed, 0 failed",
+    "eslint": "0 errors, 0 warnings",
+    "build": "vite v7.1.11 building for production... clean build in 2.69s",
+    "standaloneVerify": "PASSED"
+  }
+}
