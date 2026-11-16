@@ -1,0 +1,35 @@
+{
+  "taskId": "R62-T048",
+  "taskTitle": "Comb Sort — Failure-Path Coverage",
+  "algorithmFile": "src/algorithms/course/comb-sort.js",
+  "testFile": "src/algorithms/course/r62-t048.test.js",
+  "verificationScript": "work/R62-T048/verify.js",
+  "fixtures": {
+    "sortingCorrectness": [
+      { "input": [3, 1, 2, 2], "expected": [1, 2, 2, 3], "gapProgression": [4, 3, 2, 1, 1] },
+      { "input": [4, 3, 2, 1], "expected": [1, 2, 3, 4] },
+      { "input": [1, 2, 3, 4], "expected": [1, 2, 3, 4] },
+      { "input": [], "expected": [] },
+      { "input": [42], "expected": [42] },
+      { "input": [-3, 0, -1, 5, 2], "expected": [-3, -1, 0, 2, 5] }
+    ],
+    "failurePath": [
+      { "input": null, "success": false, "error": "Input must be a non-null array" },
+      { "input": "undefined", "success": false, "error": "Input must be a non-null array" },
+      { "input": "not an array", "success": false, "error": "Expected an array, received string" },
+      { "input": 42, "success": false, "error": "Expected an array, received number" },
+      { "input": [1, "two", 3], "success": false, "error": "Invalid element at index 1: expected a number" },
+      { "input": [1, "NaN", 3], "success": false, "error": "Invalid element at index 1: expected a number" }
+    ],
+    "recovery": {
+      "step1": { "input": null, "success": false },
+      "step2": { "input": [3, 1, 2, 2], "success": true, "sorted": [1, 2, 2, 3] }
+    }
+  },
+  "checks": {
+    "vitest": "41 passed, 0 failed",
+    "eslint": "0 errors, 0 warnings",
+    "build": "clean build in 2.64s",
+    "standaloneVerify": "PASSED"
+  }
+}
