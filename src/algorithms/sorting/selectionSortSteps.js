@@ -1,4 +1,4 @@
-import { createStep } from '../../lib/utils'
+import { createStep } from '../../lib/utils.js'
 
 export const selectionSortSources = {
   javascript: {
@@ -15,7 +15,14 @@ export const selectionSortSources = {
       [arr[i], arr[minIdx]] = [arr[minIdx], arr[i]];
     }
   }
-}`,
+  return arr;
+}
+
+// Concrete fixture execution:
+// Unsorted array [3, 1, 2] -> sorted ascending output [1, 2, 3]
+const arr = [3, 1, 2];
+selectionSort(arr);
+console.log(arr);`,
     lineMap: {
       function: 1,
       setup: 2,
@@ -25,7 +32,7 @@ export const selectionSortSources = {
       compare: 6,
       updateMin: 7,
       swap: 11,
-      complete: 15,
+      complete: 14,
     },
   },
   python: {
@@ -202,8 +209,52 @@ export function resolveSelectionSortLine(language, lineKey) {
   )
 }
 
-export function generateSelectionSortSteps(inputArray) {
-  const arr = [...inputArray]
+/**
+ * Pure ascending Selection Sort implementation matching the displayed source documentation.
+ * Does not mutate the caller's original array.
+ *
+ * Concrete Fixture:
+ *   selectionSort([3, 1, 2]) => [1, 2, 3]
+ *
+ * @param {Array<number>} arr - Input array to sort.
+ * @returns {Array<number>} New sorted array in ascending order.
+ * @throws {TypeError} If arr is not an array.
+ */
+export function selectionSort(arr) {
+  if (!Array.isArray(arr)) {
+    throw new TypeError('Input must be an array')
+  }
+  const result = [...arr]
+  const n = result.length
+  for (let i = 0; i < n - 1; i++) {
+    let minIdx = i
+    for (let j = i + 1; j < n; j++) {
+      if (result[j] < result[minIdx]) {
+        minIdx = j
+      }
+    }
+    if (minIdx !== i) {
+      ;[result[i], result[minIdx]] = [result[minIdx], result[i]]
+    }
+  }
+  return result
+}
+
+/**
+ * Generates an array of step objects representing the execution of Selection Sort.
+ *
+ * Concrete Fixtures:
+ *  - Unsorted: [3, 1, 2] -> [1, 2, 3]
+ *  - Duplicate elements: [2, 2, 1] -> [1, 2, 2]
+ *  - Already sorted: [1, 2, 3] -> [1, 2, 3] (0 swaps)
+ *  - Reversed: [3, 2, 1] -> [1, 2, 3] (1 swap)
+ *  - Smallest collections: [] -> [] (start & complete steps), [42] -> [42]
+ *
+ * @param {Array<number>} inputArray - Array of numbers to sort.
+ * @returns {Array<Object>} Sequence of visualizer step frames.
+ */
+export function generateSelectionSortSteps(inputArray = []) {
+  const arr = Array.isArray(inputArray) ? [...inputArray] : []
   const steps = []
   const n = arr.length
   const sortedIndices = []
