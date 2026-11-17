@@ -1,0 +1,95 @@
+{
+  "taskId": "R62-T049",
+  "taskTitle": "Rotate Matrix 90°: Complexity Experiment",
+  "primaryFile": "src/algorithms/course/rotate-matrix-90.js",
+  "testFile": "src/algorithms/course/r62-t049.test.js",
+  "verificationScript": "work/R62-T049/verify.js",
+  "operationDefinition": {
+    "primaryMetric": "Element Placements (Cell Assignments)",
+    "description": "The number of element read-and-write assignments transferring each cell (r, c) to rotated position (c, N - 1 - r) in the target matrix.",
+    "secondaryMetrics": {
+      "coordinateCalculations": "Evaluation of rotated column index targetCol = N - 1 - r (N^2 operations)",
+      "totalOperations": "elementPlacements + coordinateCalculations = 2 * N^2",
+      "replayFrames": "Visualizer frames: 1 start + 1 alloc + N^2 place + 1 complete = N^2 + 3 frames"
+    },
+    "hardwareIndependent": true
+  },
+  "experimentResults": [
+    {
+      "matrixSize": "2x2",
+      "dimensionN": 2,
+      "input": [
+        [1, 2],
+        [3, 4]
+      ],
+      "output": [
+        [3, 1],
+        [4, 2]
+      ],
+      "totalCells": 4,
+      "elementPlacements": 4,
+      "coordinateCalculations": 4,
+      "totalOperations": 8,
+      "replayStepFrames": 7,
+      "growthRatioFromNMinus1": null
+    },
+    {
+      "matrixSize": "3x3",
+      "dimensionN": 3,
+      "input": [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+      ],
+      "output": [
+        [7, 4, 1],
+        [8, 5, 2],
+        [9, 6, 3]
+      ],
+      "totalCells": 9,
+      "elementPlacements": 9,
+      "coordinateCalculations": 9,
+      "totalOperations": 18,
+      "replayStepFrames": 12,
+      "growthRatioFromNMinus1": 2.25
+    },
+    {
+      "matrixSize": "4x4",
+      "dimensionN": 4,
+      "input": [
+        [1, 2, 3, 4],
+        [5, 6, 7, 8],
+        [9, 10, 11, 12],
+        [13, 14, 15, 16]
+      ],
+      "output": [
+        [13, 9, 5, 1],
+        [14, 10, 6, 2],
+        [15, 11, 7, 3],
+        [16, 12, 8, 4]
+      ],
+      "totalCells": 16,
+      "elementPlacements": 16,
+      "coordinateCalculations": 16,
+      "totalOperations": 32,
+      "replayStepFrames": 19,
+      "growthRatioFromNMinus1": 1.78
+    }
+  ],
+  "mathematicalComplexityAnalysis": {
+    "asymptoticTimeComplexity": "Θ(N^2) where N is matrix side length, or Θ(M) where M = N^2 is the total number of matrix elements",
+    "asymptoticSpaceComplexity": "Θ(N^2) for the newly allocated non-mutating rotated matrix",
+    "empiricalVerification": "Placements strictly equal N^2 for all tested sizes: 2^2=4, 3^2=9, 4^2=16."
+  },
+  "fourRotationRecoveryInvariant": {
+    "property": "R^4(M) === M",
+    "verifiedForSizes": ["2x2", "3x3"],
+    "result": "PASSED"
+  },
+  "automatedCheckSummary": {
+    "vitest": "19 passed, 0 failed",
+    "eslint": "0 errors, 0 warnings",
+    "build": "vite v7.1.11 building for production... clean build in 2.78s",
+    "standaloneVerify": "PASSED (Exit Code 0)"
+  }
+}
