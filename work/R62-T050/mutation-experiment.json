@@ -1,0 +1,43 @@
+{
+  "taskId": "R62-T050",
+  "taskTitle": "Longest Common Subsequence — Mutation-Resistant Tests",
+  "primaryFile": "src/algorithms/course/longest-common-subsequence.js",
+  "testFile": "src/algorithms/course/r62-t050.test.js",
+  "verificationScript": "work/R62-T050/verify.js",
+  "concreteFixture": {
+    "first": "ABCBDAB",
+    "second": "BDCABA",
+    "expectedLCSLength": 4,
+    "validSubsequenceTies": ["BCBA", "BDAB", "BCAB"],
+    "isOrderPreservingSubsequenceOfFirst": true,
+    "isOrderPreservingSubsequenceOfSecond": true
+  },
+  "mutationExperiment": {
+    "decisiveOperation": "Character equality comparison in DP recurrence and traceback",
+    "correctCondition": "first[i - 1] === second[j - 1]",
+    "mutantCondition": "first[i - 1] !== second[j - 1]",
+    "stage1_correctImplementation": {
+      "input": { "first": "ABCBDAB", "second": "BDCABA" },
+      "output": { "length": 4, "subsequence": "BCBA" },
+      "regressionResult": "PASS"
+    },
+    "stage2_mutantExecution": {
+      "input": { "first": "ABCBDAB", "second": "BDCABA" },
+      "output": { "length": 6, "subsequence": "ACBDAB" },
+      "regressionResult": "FAIL (Correctly Caught)",
+      "failureReason": "LCS length mismatch: expected 4, got 6; mutant subsequence 'ACBDAB' is invalid common subsequence"
+    },
+    "stage3_restoredImplementation": {
+      "input": { "first": "ABCBDAB", "second": "BDCABA" },
+      "output": { "length": 4, "subsequence": "BCBA" },
+      "regressionResult": "PASS",
+      "productionSourceClean": true
+    }
+  },
+  "automatedCheckSummary": {
+    "vitest": "16 passed, 0 failed",
+    "eslint": "0 errors, 0 warnings",
+    "build": "vite v7.1.11 building for production... clean build in 2.80s",
+    "standaloneVerify": "PASSED (Exit Code 0)"
+  }
+}
